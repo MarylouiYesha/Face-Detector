@@ -17,6 +17,13 @@ while True:
         break
 
      _, frame = video.read()
+     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+     faces = face_cascade.detectMultiScale(
+        gray,
+        scaleFactor = 1.3,
+        minNeighbors = 7,
+        minSize =(30,30)
+     )
 
     imgbytes = cv2.imencode('.png', frame) [1].tobytes()
     window['-IMAGE'].update(data=imgbytes)
