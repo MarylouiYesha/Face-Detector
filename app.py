@@ -16,4 +16,9 @@ while True:
     if event == sg.WIN_CLOSED:
         break
 
+     _, frame = video.read()
+
+    imgbytes = cv2.imencode('.png', frame) [1].tobytes()
+    window['-IMAGE'].update(data=imgbytes)
+
 window.closet()
