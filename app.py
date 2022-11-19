@@ -12,7 +12,7 @@ video = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout=0)
     if event == sg.WIN_CLOSED:
         break
 
