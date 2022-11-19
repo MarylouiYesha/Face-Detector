@@ -22,10 +22,14 @@ while True:
         gray,
         scaleFactor = 1.3,
         minNeighbors = 7,
-        minSize =(30,30)
-     )
+        minSize =(30,30))
+    
+    for (x,y,w,h) in faces:
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
 
     imgbytes = cv2.imencode('.png', frame) [1].tobytes()
     window['-IMAGE'].update(data=imgbytes)
+    
+    window ['-TEXT-'].update(f'People in picture: {len(faces)}')
 
 window.closet()
