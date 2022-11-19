@@ -9,7 +9,7 @@ layout=[
 window = sg.Window('Face Detector', layout)
 
 video = cv2.VideoCapture(0)
-face_cascade =
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while True:
     event, values = window.read()
