@@ -30,6 +30,6 @@ while True:
     imgbytes = cv2.imencode('.png', frame) [1].tobytes()
     window['-IMAGE'].update(data=imgbytes)
     
-    window ['-TEXT-'].update(f'People in picture: {len(faces)}')
+    window ['-TEXT'].update(f'People in picture: {len(faces)}')
 
-window.closet()
+window.close()
